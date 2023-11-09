@@ -65,3 +65,16 @@ ON employees.emp_no = dept_emp.emp_no
 INNER JOIN departments
 on dept_emp.dept_no = departments.dept_no
 WHERE departments.dept_name = 'Sales'
+
+--7. employees in Sales department with more data
+
+SELECT employees.emp_no,
+employees.last_name,
+employees.first_name,
+departments.dept_name
+FROM employees
+INNER JOIN dept_emp
+ON employees.emp_no = dept_emp.emp_no
+INNER JOIN departments
+on dept_emp.dept_no = departments.dept_no
+WHERE departments.dept_name = 'Sales'
