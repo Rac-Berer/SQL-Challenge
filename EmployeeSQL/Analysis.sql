@@ -52,3 +52,16 @@ SELECT first_name, last_name, sex
 FROM employees
 WHERE first_name = 'Hercules'
 	AND last_name LIKE 'B%'
+	
+	
+--6. employees in Sales department
+
+SELECT employees.emp_no,
+employees.last_name,
+employees.first_name
+FROM employees
+INNER JOIN dept_emp
+ON employees.emp_no = dept_emp.emp_no
+INNER JOIN departments
+on dept_emp.dept_no = departments.dept_no
+WHERE departments.dept_name = 'Sales'
